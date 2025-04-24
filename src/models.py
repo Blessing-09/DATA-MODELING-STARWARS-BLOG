@@ -58,7 +58,6 @@ class Favorite(db.Model):
     planet_id: Mapped[int] = mapped_column(ForeignKey("planet.id"))
 
       # relationship
-    user: Mapped[List["User"]] = relationship(back_populates="favorite")
-    char: Mapped[List["Character"]] = relationship(back_populates="favorite")
-    planet: Mapped[List["Planet"]] = relationship(back_populates="favorite")
-    
+    user: Mapped["User"] = relationship(back_populates="favorite")
+    char: Mapped["Character"] = relationship(back_populates="favorite")
+    planet: Mapped["Planet"] = relationship(back_populates="favorite")
